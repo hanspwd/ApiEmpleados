@@ -30,6 +30,10 @@ public class EmployeService {
         return employeeRepository.addEmployee(empleado);
     }
 
+    public List<Employee> saveEmployees(List<Employee> employees) {
+        return employeeRepository.addEmployes(employees);
+    }
+
     public void deleteEmployeeById(int id) {
         employeeRepository.removeEmployeeById(id);
     }
