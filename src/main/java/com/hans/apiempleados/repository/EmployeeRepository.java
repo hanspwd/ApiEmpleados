@@ -47,7 +47,7 @@ public class EmployeeRepository {
         empleados.removeIf(empleado -> empleado.getId() == id);
     }
 
-    public Employee updateEmployee(Employee empleado) {
+    public Employee updateEmployeeById(Employee empleado) {
         Employee existEmployee = getEmpleadoById(empleado.getId());
         if(existEmployee != null) {
             existEmployee.setPrimerNombre(empleado.getPrimerNombre());
