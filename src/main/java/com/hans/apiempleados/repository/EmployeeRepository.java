@@ -23,6 +23,11 @@ public class EmployeeRepository {
         return empleado;
     }
 
+    public List<Employee> addEmployes(List<Employee> employees) {
+        empleados.addAll(employees);
+        return employees;
+    }
+
     public List<Employee> getAllEmployees() {
         return empleados;
     }
