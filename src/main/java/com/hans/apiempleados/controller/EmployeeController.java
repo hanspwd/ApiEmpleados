@@ -19,16 +19,19 @@ public class EmployeeController {
     @Autowired
     private EmployeService employeService;
 
-    @GetMapping()
+    @GetMapping
     public List<Employee> getEmployees() {
         return employeService.getAllEmployees();
     }
 
-    @PostMapping()
-    public Employee postMethodName(@RequestBody Employee employee) {   
+    @PostMapping
+    public Employee postEmployee(@RequestBody Employee employee) {   
         return employeService.saveEmployee(employee);
     }
-    
-    
+
+    @PostMapping("bulk")
+    public List<Employee> postEmployees(@RequestBody List<Employee> employees) {
+        return employeService.saveEmployees(employees);
+    }
 
 }
