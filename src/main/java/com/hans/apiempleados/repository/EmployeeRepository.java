@@ -3,7 +3,6 @@ package com.hans.apiempleados.repository;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.hans.apiempleados.model.Employee;
@@ -11,12 +10,7 @@ import com.hans.apiempleados.model.Employee;
 @Repository
 public class EmployeeRepository {
     
-    @Autowired
-    private List<Employee> empleados;
-
-    public EmployeeRepository() {
-        empleados = new ArrayList<>();
-    }
+    private List<Employee> empleados = new ArrayList<>();
 
     public Employee addEmployee(Employee empleado) {
         empleados.add(empleado);
