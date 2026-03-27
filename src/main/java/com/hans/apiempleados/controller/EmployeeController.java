@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.hans.apiempleados.model.Employee;
 import com.hans.apiempleados.service.EmployeService;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,6 +34,11 @@ public class EmployeeController {
     @PostMapping("bulk")
     public List<Employee> postEmployees(@RequestBody List<Employee> employees) {
         return employeService.saveEmployees(employees);
+    }
+
+    @DeleteMapping("{id}")
+    public void deleteEmployee(@RequestBody int id) {
+        employeService.deleteEmployee(id);
     }
 
 }

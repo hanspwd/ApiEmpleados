@@ -45,6 +45,11 @@ public class EmployeeRepository {
         empleados.removeIf(empleado -> empleado.getId() == id);
     }
 
+    public void removeEmployeeByRut(String rut) {
+        empleados.removeIf(empleado -> empleado.getRut().equals(rut));
+    }
+
+
     public Employee updateEmployeeById(Employee empleado) {
         Employee existEmployee = getEmpleadoById(empleado.getId());
         if(existEmployee != null) {

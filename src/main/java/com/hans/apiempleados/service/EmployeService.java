@@ -38,6 +38,11 @@ public class EmployeService {
         employeeRepository.removeEmployeeById(id);
     }
 
+    public void deleteEmployeeByRut(String rut) {
+        employeeRepository.removeEmployeeByRut(rut);
+    }
+    
+
     public Employee updateEmployeeByRut(Employee empleado) {
         return employeeRepository.updateEmployeeByRut(empleado);
     }
