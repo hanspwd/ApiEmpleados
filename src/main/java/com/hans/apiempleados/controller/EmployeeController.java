@@ -39,14 +39,18 @@ public class EmployeeController {
         return employeService.saveEmployees(employees);
     }
 
-    @DeleteMapping("{id}")
-    public String deleteEmployeeId(@RequestBody int id) {
+    /*
+    Al utilizar @DeleteMapping para indicar el valor con el cual se quiere hacer la peticion
+    se debe hacer con un @PathVariable TipoDato nombreDato, no con un @RequestBody o fallara
+    */
+    @DeleteMapping("del/id/{id}")
+    public String deleteEmployeeId(@PathVariable int id) {
         employeService.deleteEmployeeById(id);
         return "Employee deleted successfully";
     }
 
-    @DeleteMapping("{rut}")
-    public String deleteEmployeeRut(@RequestBody String rut) {
+    @DeleteMapping("del/rut/{rut}")
+    public String deleteEmployeeRut(@PathVariable String rut) {
         employeService.deleteEmployeeByRut(rut);
         return "Employee deleted successfully";
     }
