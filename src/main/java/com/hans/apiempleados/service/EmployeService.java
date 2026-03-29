@@ -43,8 +43,12 @@ public class EmployeService {
     }
     
 
-    public Employee updateEmployeeByRut(Employee empleado) {
-        return employeeRepository.updateEmployeeByRut(empleado);
+    public Employee updateEmployeeByRut(Employee employee) {
+        return employeeRepository.updateEmployeeByRut(employee);
+    }
+
+    public Employee updateEmployeeById(Employee employee) {
+        return employeeRepository.updateEmployeeById(employee);
     }
 
 }

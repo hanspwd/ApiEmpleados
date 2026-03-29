@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
 
 @RestController
 @RequestMapping("/api/v1/employees")
@@ -37,8 +40,25 @@ public class EmployeeController {
     }
 
     @DeleteMapping("{id}")
-    public void deleteEmployee(@RequestBody int id) {
-        employeService.deleteEmployee(id);
+    public String deleteEmployeeId(@RequestBody int id) {
+        employeService.deleteEmployeeById(id);
+        return "Employee deleted successfully";
+    }
+
+    @DeleteMapping("{rut}")
+    public String deleteEmployeeRut(@RequestBody String rut) {
+        employeService.deleteEmployeeByRut(rut);
+        return "Employee deleted successfully";
+    }
+
+    @PutMapping("{rut}")
+    public Employee putEmployeeRut(@PathVariable String rut, @RequestBody Employee employee) {
+        return employeService.updateEmployeeByRut(employee);
+    }
+
+    @PutMapping("{id}")
+    public Employee putEmployeeRut(@PathVariable int id, @RequestBody Employee employee) {
+        return employeService.updateEmployeeById(employee);
     }
 
 }
